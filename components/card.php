@@ -3,10 +3,10 @@
 
 <?php foreach ($currentData as $book) : ?>
 
-    <div class="  mt-4 m-5  p-4 ">
+    <div class=" mt-4 m-5  p-4 ">
 
         <a href="">
-            <img class="h-96 rounded-xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/history-book-cover-design-template-0e3961aae83cdeab2d3b120dd2d7063c_screen.jpg?ts=1692216756" alt="recipeimage">
+            <img class="w-64 h-96 rounded-xl" src="<?php echo $book['BookCover'] ?>">
 
             <div class="mt-3  font-mono w-64">
 
