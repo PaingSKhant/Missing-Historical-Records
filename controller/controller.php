@@ -2,7 +2,7 @@
 
 class Book
 {
-
+    // json connection method 
     public function jsonConnect()
     {
         $json_file = file_get_contents('./data/books.json');
@@ -12,6 +12,7 @@ class Book
         return $data;
     }
 
+    // die var_dump method 
     public function dd($data)
     {
         $dd = die(var_dump($data));
