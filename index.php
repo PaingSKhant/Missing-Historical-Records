@@ -27,23 +27,23 @@ $bookData = $historicalBook->jsonConnect();
             <!-- book list card  -->
             <div class="flex flex-wrap justify-around mt-4">
 
-<?php foreach ($bookData as $book) : ?>
+                <?php foreach ($bookData as $book) : ?>
 
-    <div class="w-96  mt-4 m-5  p-4 ">
+                    <div class="  mt-4 m-5  p-4 ">
 
-        <img class=" w-96 h-96 rounded-xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/history-book-cover-design-template-0e3961aae83cdeab2d3b120dd2d7063c_screen.jpg?ts=1692216756" alt="recipeimage">
+                        <img class="h-96 rounded-xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/history-book-cover-design-template-0e3961aae83cdeab2d3b120dd2d7063c_screen.jpg?ts=1692216756" alt="recipeimage">
 
-        <div class="mt-3  font-mono">
+                        <div class="mt-3  font-mono w-64">
 
-            <h1 class=" text-black text-xl mt-4"><?php echo $book['BookTitle'] ?></h1>
+                            <p class="text-black mt-4"><?php echo $book['BookTitle'] ?></p>
 
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-<?php endforeach; ?>
+                <?php endforeach; ?>
 
-</div>
+            </div>
 
         </div>
 
