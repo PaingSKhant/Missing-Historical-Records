@@ -5,7 +5,8 @@
 
     <div class=" mt-4 m-5  p-4 ">
 
-        <a href="">
+        <a href="./bookDetail.php?id=<?php echo $book['BookId'] ?>">
+        
             <img class="w-64 h-96 rounded-xl" src="<?php echo $book['BookCover'] ?>">
 
             <div class="mt-3  font-mono w-64">

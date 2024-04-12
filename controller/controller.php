@@ -51,6 +51,8 @@ class Book
         return $totalPages;
     }
 
+
+
 }
 
 $historicalBook = new Book();

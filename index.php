@@ -27,14 +27,9 @@ $totalPages = $historicalBook->link();
 <body class="bg-gray-100">
     <div class="font-mono">
         <!-- navigation bar  -->
-        <div class="container mx-auto p-4 mt-10  ">
+        <div class="container mx-auto p-4">
 
-           <div class="flex">
-           <img src="./logo/book.jpg" class="w-20 h-20 mb-2 rounded-xl" alt="bookLogo">
-
-           <h1 class="text-2xl font-bold mt-6 ms-2">Book Library</h1>
-
-           </div>
+           <?php require('components/navbar.php'); ?>
             <hr>
 
             <!-- book list card  -->
