@@ -51,7 +51,17 @@ class Book
         return $totalPages;
     }
 
+    public function searchJson()
+    {
+       $id =  $_GET['id'] ;
+        $multiJsonFile = file_get_contents("./data/$id.json");
 
+        $multiJson = json_decode($multiJsonFile, true);
+
+        return $multiJson ;
+
+
+    }
 
 }
 

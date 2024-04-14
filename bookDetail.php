@@ -2,13 +2,12 @@
 
 require_once "./controller/controller.php";
 
- $bookData = $historicalBook->jsonConnect(); 
+$bookData = $historicalBook->jsonConnect();
 
 $bookId = $_GET['id'];
 
-
-
-// die(var_dump($bookId));
+$multiJson = $historicalBook->searchJson();
+//die(var_dump($multiJson));
 
 ?>
 <!DOCTYPE html>
@@ -29,32 +28,49 @@ $bookId = $_GET['id'];
 
             <?php require('./components/navbar.php'); ?>
             <hr>
-            <div class="mt-8 container mx-auto flex justify-center ">
-               <a href="index.php">
-               <button class="bg-white hover:bg-gray-300 text-dark shadow-lg font-bold py-2 px-4 rounded">Back</button>
-               </a>
+            <div class="mt-2  container mx-auto flex justify-center ">
+                <a href="index.php">
+                    <button class="bg-white hover:bg-gray-300 text-dark shadow-lg font-bold py-2 px-4 rounded">Back</button>
+                </a>
             </div>
-            <?php foreach($bookData as $book): ?>
-            <?php if($book['BookId'] == $bookId): ?>
-               
+            <div class="container mx-auto mt-1">
+
+            <?php foreach ($bookData as $book) : ?>
+                    <?php if ($book['BookId'] == $bookId) : ?>
+
+                        <div class="w-full p-4 text-center bg-white border border-blue-500 rounded-lg shadow-inner sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                            <h5 class=" text-3xl font-bold text-gray-900 dark:text-white"><?php echo $book['BookTitle']; ?></h5>
+                            <p class="mt-2">=========================<i class="fa-solid fa-gem"></i>=========================</p>
+                            <p class="text-lg  text-gray-500 sm:text-lg dark:text-gray-400"><?php echo $book['BookDescription']; ?></p>
+                            
+                        </div>
 
 
-                <div class="w-full mt-2 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white"><?php echo $book['BookTitle']; ?> </h5>
-                    <p class="mt-2 text-base text-gray-500 sm:text-lg dark:text-gray-400"><?php echo $book['BookDescription']; ?></p>
-                    <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
-                        
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php foreach ($multiJson as $multi) : ?>
+
+                    <div class="w-full  text-center bg-white border border-blue-500 rounded-lg shadow-inner sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                       
+                        <p class="text-lg text-gray-500 sm:text-lg dark:text-gray-400"><?php echo $multi['Content']; ?></p>
+                       
                     </div>
-                </div>
 
+                    
+                <?php endforeach; ?>
 
-          
-            <?php endif; ?>
-            <?php endforeach; ?>
+                <div class="continer flex justify-center"><p class="mt-2">=========================<i class="fa-solid fa-gem"></i>=========================</p></div>
 
+                
+
+            </div>
+           
         </div>
 
     </div>
+
+
 
 </body>
 
